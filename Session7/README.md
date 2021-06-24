@@ -62,7 +62,7 @@ Assignment has got 3 parts as mentioned below along with respective solutions:
 
   The summary of the network looks like this:  
 
-  ![Model Summary](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img9.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img9.PNG)
 
 
   # The Network / Model - Loss Function
