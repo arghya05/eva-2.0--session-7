@@ -60,10 +60,7 @@ Assignment has got 3 parts as mentioned below along with respective solutions:
 
   Also, we have used the glove pre trained embeddings here by loading the pretrained embeddings weight to embeddings layer. We didn't free this layer at let the gradient to flow till this layer.
 
-  The summary of the network looks like this:  
-
-  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img9.PNG)
-
+  
 
   # The Network / Model - Loss Function
 
