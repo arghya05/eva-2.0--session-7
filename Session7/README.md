@@ -1,7 +1,4 @@
 
-### Submission by:
-1. Sachin Dangayach (sachin.dangayach@gmail.com)
-
 # Objective
 
 Assignment has got 3 parts as mentioned below along with respective solutions:
@@ -15,54 +12,43 @@ Assignment has got 3 parts as mentioned below along with respective solutions:
 
 ## Solution:
 
-***[Link for colab file for Session7 part 1 submission](https://colab.research.google.com/drive/1B6LeAUgkW0q90NuaVIdK8cZ8ZOTi2M_Q?usp=sharing)***
-
-  I have done the Assignment 5 by using the python package ***pytreebank*** to get the dataset. Below is the earlier submission link-
-
-| Type | Link     |
-| :-------- | :------- |
-| `Colab` | ***[Prior Submission - Assignment 5 - colab](https://colab.research.google.com/drive/13-mpSe80XXG69Pz3y1SOP7HQmekAyggw?usp=sharing)*** |
-| `Git` | ***[Prior Submission - Assignment 5 - Git Readme](https://github.com/SachinDangayach/END2.0/blob/main/Session5/README.md)*** |
-
-**For this submission, we have prepared the dataset directly as explained in the steps below-**
-
   # Data
 
   1. We get the data files from the repo by link http://nlp.stanford.edu/~socherr/stanfordSentimentTreebank.zip. This is a popular dataset for benchmarking the sentiment analysis models. Sentences are broken into phrases and users have manually given the sentiment (5 classes from very negative to very positive) to each of these phrases which are the constituents of the sentences. we can see the breakdown tree structure of an example.
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/SST_Tree.PNG)
+
 
   2. Once we get the data and unzip the files, we start preparing the dataframes for multiple files we have got.
 
   - Get sentiment values for phrases and convert label values to 5 buckets.
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/img1.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img1.PNG)
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/img2.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img2.PNG)
 
   - Get all sentences in a dataframe.
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/img3.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img3.PNG)
 
   - Get the dictionary which contains all phrases and respective phrase ids.
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/img4.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img4.PNG)
 
   - In this dataset, each sentence is split into lowest level phrases/tokens and these phrases are provided the sentiments. These leaf level nodes are merged to get the sentiment of next level and this goes up till the entire sentence. Hence the dictionary contains all sentences with the sentiment as top level phrase or node. We can do an inner join to find these phrases.
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/img5.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img5.PNG)
 
   - As we need to get the sentiment of the sentences and sentiments are maintained at phrase level, we will do the inner join to get the sentiment of sentences using the dataframe from above step.
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/img6.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img6.PNG)
 
   - To get the train test split, we will not use the train_test split dataset which has got the sentence index and split label and instead we will split the data into 70:30 ratio directly
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/img7.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img7.PNG)
 
   - Below is the final distribution of data amongst multiple classes
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/img8.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/img8.PNG)
 
   # The Network / Model - Architecture
 
@@ -90,15 +76,15 @@ Assignment has got 3 parts as mentioned below along with respective solutions:
   ### ACCURACY ACHIEVED - 40.46%
   Tried multiple experiment by couldn't get more than test 40% accuracy.
 
-  ![Training logs](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/train_logs.PNG)
+  ![Training logs](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/train_logs.PNG)
 
   Train Test Loss and Accuracy plots  
 
-  ![Accuracy and Loss plots](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/loss_acc_plots.PNG)
+  ![Accuracy and Loss plots](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/loss_acc_plots.PNG)
 
   ### Model results on test dataset
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part1/tests.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part1/tests.PNG)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -108,26 +94,21 @@ Assignment has got 3 parts as mentioned below along with respective solutions:
 
 ## Solutions
 
-| Type | Dataset     | Link     |
-| :-------- | :------- | :------- |
-| Part 2 A | Q & A Dataset | ***[Link for colab file](https://colab.research.google.com/drive/1CjHaQtXo2AVu4qzOG_UHGALelhUYI1mR?usp=sharing)*** |
-| Part 2 B| Quora Dataset | ***[Link for colab file](https://colab.research.google.com/drive/1gVaUJifS7v8QNe0bO7NoEaKC05Ruv4lY?usp=sharing)*** |
 
 ### Part 2 A Data Preparation Steps
 
 CMU Question-Answers dataset contains questions and answers from prepared from Wikipedia by three successive classes in CMU. We will download the dataset from the link and follow below mentioned steps -
 
-- Download and unzip the dataset and load the files Question_Answer_Dataset_v1.2/S08/question_answer_pairs.txt, Question_Answer_Dataset_v1.2/S09/question_answer_pairs.txt , Question_Answer_Dataset_v1.2/S10/question_answer_pairs.txt into three separate dataframes.
 
-  ![S08](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2A/img1.PNG)
+  ![S08](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2A/img1.PNG)
 
-  ![S09](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2A/img2.PNG)
+  ![S09](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2A/img2.PNG)
 
-  ![S10](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2A/img3.PNG)
+  ![S10](hhttps://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2A/img3.PNG)
 
 - Drop unnecessary columns to finally get dataframe with questions and answers as columns
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2A/img4.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2A/img4.PNG)
 
 - Split the dataset containing ***3110*** records into train-test set with 70:30 split ratio.
 
@@ -141,13 +122,13 @@ CMU Question-Answers dataset contains questions and answers from prepared from W
 
 I have not done any changes to model as the intent was more on data prep. work.
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2A/img5.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2A/img5.PNG)
 
 ### The Training
   Model achieves test ppl of 36.80 accuracy in 10 epochs
   - Training Log
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2A/img6.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2A/img6.PNG)
 
 
 ### Part 2 B Data Preparation Steps
@@ -158,15 +139,15 @@ We followed following steps to build a model which can generate a similar questi
 
 - Download and unzip the dataset and load the files quora_duplicate_questions.tsv into dataframes. it contains ***404290*** records.
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2B/img1.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2B/img1.PNG)
 
 - Filter records where question1 and question2 are duplicates. This results to ***149263*** records.
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2B/img2.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2B/img2.PNG)
 
 - Drop unwanted columns and reset the index
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2B/img3.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2B/img3.PNG)
 
 - Split the dataset into train-test set with 70:30 split ratio.
 
@@ -180,15 +161,49 @@ We followed following steps to build a model which can generate a similar questi
 
 I have not done any changes to model as the intent was more on data prep. work.
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2A/img5.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2A/img5.PNG)
 
 ### The Training
   Model achieves nearly test ppl of 35.7 accuracy in 10 epochs
   - Training Log
 
-  ![alt](https://github.com/SachinDangayach/END2.0/blob/main/Session7/Utils/Part2A/img6.PNG)
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part2A/img6.PNG)
 
 
 
 3. Try for additional datasets the same activity what we tried above from the link mentioned below:
   - https://kili-technology.com/blog/chatbot-training-datasets
+ We are using the NarrativeQA Reading Comprehension Challenge Dataset (https://github.com/deepmind/narrativeqa). It includes the list of documents with Wikipedia summaries, links to full stories, and questions and answers. In the qaps.csv file of this dataset, we have one question and two answers to this questions based on the corresponding wiki doc.
+As our aim is to train and learn a language model, we are changing the problem here to generate a similar answer given an answer to the model. As we see, the dataset contains two different answers to a questions and their tokenzied form, what we have done here is to recreate a dataset by dropping all columns except the Answer1 and Answer2.
+Now, model gets Answer1 as input and it will predict the Answer 2 as output.
+
+We followed following steps to build a model which can generate a similar questions given a question as input.
+
+- Download and unzip the dataset and load the files https://raw.githubusercontent.com/deepmind/narrativeqa/master/qaps.csv. it contains ***46765*** records.
+
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part3/img1.PNG)
+
+- Drop unwanted columns leaving only answer1 and answer2 columns
+
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part3/img2.PNG)
+
+- Split the dataset into train-test set with 70:30 split ratio.
+
+- Create tokenizer to clean the dataset using spacy and create datafields =  [('answer1', ANS1), ('answer2', ANS2)] with initial token as <sos>, end token as <eos>
+
+- build the vocab using train data using tokens with min frequency = 2
+
+- Create train and test iterators
+
+### The Network / Model - Architecture
+
+I have not done any changes to model as the intent was more on data prep. work.
+
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part3/img3.PNG)
+
+### The Training
+  Model achieves nearly test ppl of 32.5 in 10 epochs
+  - Training Log
+
+  ![alt](https://github.com/arghya05/eva-2.0--session-7/blob/main/Session7/Utils/Part3/img4.PNG)
+
